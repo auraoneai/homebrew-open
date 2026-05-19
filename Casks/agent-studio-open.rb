@@ -1,12 +1,14 @@
 cask "agent-studio-open" do
   version "0.1.0"
-  sha256 "{{SHA256_DMG_UNIVERSAL}}"
 
-  url "https://github.com/auraoneai/agent-studio-open/releases/download/v#{version}/Agent-Studio-Open_#{version}_universal.dmg",
+  sha256 "1dce9e2abab65a5ef08114f0eeb64c76c4ac1784d5ddc8cfb67f53f8302bb8b7"
+
+  url "https://github.com/auraoneai/agent-studio-open/releases/download/v#{version}/Agent.Studio.Open_#{version}_aarch64.dmg",
       verified: "github.com/auraoneai/agent-studio-open/"
   name "Agent Studio Open"
   desc "Open-source desktop IDE for MCP server debugging and agent trace replay"
   homepage "https://auraone.ai/open/agent-studio-open"
+  depends_on arch: :arm64
 
   livecheck do
     url :url

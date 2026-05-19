@@ -1,15 +1,14 @@
 cask "rubric-studio-open" do
   version "0.1.0"
-  arch arm: "aarch64", intel: "x64"
 
-  sha256 arm: "BLOCKED-2026-05-13-REPLACE-WITH-SIGNED-DMG-SHA256",
-         intel: "BLOCKED-2026-05-13-REPLACE-WITH-SIGNED-DMG-SHA256"
+  sha256 "e9851568e64a8315e6b72411fb1fa8d6d4d0131fa15882478d29f83cc548c3c3"
 
-  url "https://github.com/auraoneai/rubric-studio-open/releases/download/v#{version}/Rubric-Studio-Open_#{version}_universal.dmg",
+  url "https://github.com/auraoneai/rubric-studio-open/releases/download/v#{version}/Rubric.Studio.Open_#{version}_aarch64.dmg",
       verified: "github.com/auraoneai/rubric-studio-open/"
   name "Rubric Studio Open"
   desc "Local-first IDE for authoring, testing, calibrating, diffing, and exporting AI evaluation rubrics"
   homepage "https://auraone.ai/open/rubric-studio-open"
+  depends_on arch: :arm64
 
   livecheck do
     url :url
@@ -17,7 +16,7 @@ cask "rubric-studio-open" do
   end
 
   app "Rubric Studio Open.app"
-  binary "#{appdir}/Rubric Studio Open.app/Contents/MacOS/rubricstudio", target: "rubricstudio"
+  binary "#{appdir}/Rubric Studio Open.app/Contents/MacOS/rubric-studio-open", target: "rubricstudio"
 
   zap trash: [
     "~/Library/Application Support/ai.auraone.rubricstudio",
